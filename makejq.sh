@@ -33,6 +33,8 @@ HTMLFILE="
         <link
             rel=\"stylesheet\" text=\"text/css\" href=\"${filename##.*}.css\"
         >
+        <script src=\"jquery.js\"></script>
+        <script src=\"${filename##.*}.js\"></script>
     </head>
     <body>
         <?php
@@ -82,6 +84,7 @@ while getopts ${optionstrings} opt; do
             filename="${OPTARG}"
             echo "${CSSFILE}" > "${filename##.*}.css"
             echo "${HTMLFILE}" > "${filename##.*}.html"
+            touch "${filename##.*}.js"
             ;;
         p)
             echo "Creating project ${OPTARG}..."
@@ -89,6 +92,7 @@ while getopts ${optionstrings} opt; do
             mkdir -p "${filename}" "${filename}/css" "${filename}/js"
 
             touch "${filename}/js/main.js"
+            cp jquery-js-downloads/jquery-3.7.1.min.js "${filename}/js/jquery.js"
             echo "${CSSFILE}" > "${filename}/css/main.css"
             echo "${HTMLFILE}" > "${filename}/index.html"
             perl -pi -e 's|href="main.css"|href="css/main.css"|g' "${filename}/index.html"
