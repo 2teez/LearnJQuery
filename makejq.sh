@@ -84,6 +84,7 @@ while getopts ${optionstrings} opt; do
             filename="${OPTARG}"
             echo "${CSSFILE}" > "${filename##.*}.css"
             echo "${HTMLFILE}" > "${filename##.*}.html"
+            ! [[ -e "jquery.js" ]] && cp "$HOME/jquery-js-dwns/jquery-3.7.1.min.js" "jquery.js"
             touch "${filename##.*}.js"
             ;;
         p)
@@ -92,10 +93,12 @@ while getopts ${optionstrings} opt; do
             mkdir -p "${filename}" "${filename}/css" "${filename}/js"
 
             touch "${filename}/js/main.js"
-            cp jquery-js-downloads/jquery-3.7.1.min.js "${filename}/js/jquery.js"
+            cp "$HOME/jquery-js-dwns/jquery-3.7.1.min.js" "${filename}/js/jquery.js"
             echo "${CSSFILE}" > "${filename}/css/main.css"
             echo "${HTMLFILE}" > "${filename}/index.html"
             perl -pi -e 's|href="main.css"|href="css/main.css"|g' "${filename}/index.html"
+            perl -pi -e 's|src="jquery.js"|src="js/jquery.js"|g' "${filename}/index.html"
+            perl -pi -e 's|src="main.js"|src="js/main.js"|g' "${filename}/index.html"
             ;;
         *)
             echo "Invalid option: -${OPTARG}" >&2
