@@ -13,3 +13,7 @@ body {
 .sub-level {
     background: #ccc;
 }
+
+.big-letter::first-letter {
+    font-size: 2em;
+}
