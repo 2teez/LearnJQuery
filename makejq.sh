@@ -27,7 +27,7 @@ HTMLFILE="
     <!-- Required meta tags always come first -->
     <meta charset=\"utf-8\" />
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
-        <title>CSS Projects</title>
+        <title>JQuery Practice</title>
 
         <!-- CSS -->
         <link
