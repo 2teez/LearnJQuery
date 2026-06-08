@@ -15,6 +15,7 @@ echo "  -g: Create a generic css file attached to a html file."
 echo "  -h: Display this help option."
 echo "  -p: Create a full flage project directory with seperate folders for"
 echo "      css, js and an index.html or index.php file"
+echo "  -i: inline jquery file in a html file."
 }
 
 # global filename
@@ -33,6 +34,7 @@ HTMLFILE="
         <link
             rel=\"stylesheet\" text=\"text/css\" href=\"${filename##.*}.css\"
         >
+        <!-- JQuery -->
         <script src=\"jquery.js\"></script>
         <script src=\"${filename##.*}.js\"></script>
     </head>
@@ -55,7 +57,7 @@ CSSFILE="
 
 [[ "${#}" -ne 2 ]] && { help_file; exit; }
 
-optionstrings="d:g:p:h"
+optionstrings="d:g:p:i:h"
 
 while getopts ${optionstrings} opt; do
     case ${opt} in
@@ -100,6 +102,18 @@ while getopts ${optionstrings} opt; do
             perl -pi -e 's|src="jquery.js"|src="js/jquery.js"|g' "${filename}/index.html"
             perl -pi -e 's|src="main.js"|src="js/main.js"|g' "${filename}/index.html"
             ;;
+
+        i)
+            echo "Inlining jquery file in ${OPTARG}..."
+            filename="${OPTARG}"
+            css_file="${filename##.*}.css"
+            html_file="${filename##.*}.html"
+            echo "${CSSFILE}" > "${css_file}"
+            echo "${HTMLFILE}" > "${html_file}"
+            ! [[ -e "jquery.js" ]] && cp "$HOME/jquery-js-dwns/jquery-3.7.1.min.js" "jquery.js"
+            perl -pi -e "s|src=\"main.js\"||g" "${html_file}"
+            ;;
+
         *)
             echo "Invalid option: -${OPTARG}" >&2
             exit 1
