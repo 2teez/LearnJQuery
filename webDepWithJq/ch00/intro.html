@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags always come first -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>JQuery Practice</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" text="text/css" href="intro.css" />
+        <!-- JQuery -->
+        <script src="jquery.js"></script>
+        <script>
+            $(document).ready(() => {
+                $("<div/>")
+                    .addClass("selected")
+                    .attr({ id: "body", title: "Welcome to JQuery" })
+                    .text("Hello, World")
+                    .appendTo("body");
+            });
+        </script>
+    </head>
+    <body>
+        <script src=""></script>
+    </body>
+</html>

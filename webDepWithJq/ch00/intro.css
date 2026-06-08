@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font:
+        16px/1.5 Arial,
+        sans-serif;
+}
+
+div.selected {
+    background: #00ff;
+    color: #fff;
+    padding: 5px;
+    display: inline-block;
+}
