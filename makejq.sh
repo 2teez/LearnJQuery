@@ -112,6 +112,7 @@ while getopts ${optionstrings} opt; do
             echo "${HTMLFILE}" > "${html_file}"
             ! [[ -e "jquery.js" ]] && cp "$HOME/jquery-js-dwns/jquery-3.7.1.min.js" "jquery.js"
             perl -pi -e "s|src=\"main.js\"||g" "${html_file}"
+            perl -pi -e "s|href=\"main.css\"|href=\"${css_file}\"|g" "${html_file}"
             ;;
 
         *)
