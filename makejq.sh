@@ -32,11 +32,11 @@ HTMLFILE="
 
         <!-- CSS -->
         <link
-            rel=\"stylesheet\" text=\"text/css\" href=\"${filename##.*}.css\"
+            rel=\"stylesheet\" type=\"text/css\" href=\"${filename##.*}.css\"
         >
         <!-- JQuery -->
-        <script src=\"jquery.js\"></script>
-        <script src=\"${filename##.*}.js\"></script>
+        <script src=\"jquery.js\" type=\"text/javascript\"></script>
+        <script src=\"${filename##.*}.js\" type=\"text/javascript\"></script>
     </head>
     <body>
         <?php
@@ -44,7 +44,7 @@ HTMLFILE="
         ?>
 
         <!-- JS. -->
-        <script src=""></script>
+        <script src=\"\" type=\"text/javascript\"></script>
     </body>
 </html>
 "
