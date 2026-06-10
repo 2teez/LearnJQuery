@@ -1,4 +1,8 @@
-h2.firstH2 {
+h1 ~ [lang] {
     background-color: #777;
     color: #fff;
+}
+
+h1 + [lang="es"] {
+    font-size: 14px;
 }
