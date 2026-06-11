@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags always come first -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>JQuery Practice</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="exer1.css" />
+        <!-- JQuery -->
+        <script src="jquery.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(() => {
+                $(".show").click(() => {
+                    $("img").toggle("fade");
+                });
+                $("a").mouseenter(() => {
+                    // $("a").css({ "text-decoration": "underline" });
+                    $("img").show("slow");
+                });
+                $("a").mouseleave(() => {
+                    // $("a").css({ "text-decoration": "none" });
+                    $("img").hide("slow");
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+            <a href="#" class="show"
+                >Show Me the Furry Friend of the Day. <br />
+                <img src="primula.png" alt="furry-friend" />
+            </a>
+        </div>
+        <!-- JS. -->
+        <script src="" type="text/javascript"></script>
+    </body>
+</html>
