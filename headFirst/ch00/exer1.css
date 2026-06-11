@@ -1,0 +1,35 @@
+body {
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+a:link img,
+a:visited img {
+    display: none;
+}
+
+a:hover img,
+a:active img {
+    display: inline-block;
+}
+
+.show {
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 25px;
+    background: #d8b36e;
+    color: white;
+    width: 245px;
+    line-height: 45px;
+    border-bottom: 5px solid #fff;
+    text-decoration: none;
+}
+
+img {
+    display: none;
+    position: absolute;
+    border-top: 5px solid #fff;
+    background: #d8b36e;
+    width: 205px;
+    padding: 20px;
+}
