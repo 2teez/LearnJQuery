@@ -12,17 +12,17 @@
         <script src="jquery.js" type="text/javascript"></script>
         <script type="text/javascript">
             $(() => {
-                $("img").fadeIn(1000);
-                $("img").slideToggle("slow");
+                $(".show").click(() => {
+                    $("img").fadeIn(1000);
+                    $("#iframe").slideToggle("slow");
+                });
             });
         </script>
     </head>
     <body>
-        <div>
-            <a href="#" class="show"
-                >Show Me the Furry Friend of the Day. <br />
-                <img src="primula.png" alt="furry-friend" />
-            </a>
+        <div class="show">Show Me the Furry Friend of the Day.</div>
+        <div id="iframe">
+            <img src="primula.png" alt="furry-friend" />
         </div>
         <!-- JS. -->
         <script src="" type="text/javascript"></script>
