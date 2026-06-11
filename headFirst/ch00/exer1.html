@@ -17,11 +17,13 @@
                 });
                 $("a").mouseenter(() => {
                     // $("a").css({ "text-decoration": "underline" });
-                    $("img").show("slow");
+                    // $("img").show("slow");  // does same as fadeIn
+                    $("img").fadeIn("slow");
                 });
                 $("a").mouseleave(() => {
                     // $("a").css({ "text-decoration": "none" });
-                    $("img").hide("slow");
+                    //$("img").hide("slow");  // does same as fadeOut
+                    $("img").fadeOut("slow");
                 });
             });
         </script>
