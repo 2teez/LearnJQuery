@@ -1,0 +1,21 @@
+div {
+    float: left;
+    height: 345px;
+    text-align: left;
+    border: solid #000 3px;
+}
+
+.header {
+    width: 100%;
+    border: 0px;
+    height: 50px;
+}
+
+.main {
+    background-color: #777;
+    height: 500px;
+}
+
+.jumps {
+    background-color: #fff;
+}
